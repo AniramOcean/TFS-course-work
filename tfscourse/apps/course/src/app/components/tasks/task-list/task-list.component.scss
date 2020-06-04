@@ -1,0 +1,28 @@
+.task-list-inner {
+  min-height: 60px;
+  margin: 10px 6px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  padding: 0 10px;
+
+  .task-list-title {
+    text-align: left;
+    width: 80%;
+  }
+
+  .task-list-subtitle {
+    padding-top: 20px;
+  }
+
+  .task-list-buttons {
+    text-align: right;
+    width: 20%;
+
+    .btn-open {
+
+    }
+  }
+}
+

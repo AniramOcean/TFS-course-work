@@ -1,0 +1,13 @@
+<mat-dialog-content class="task-popup">
+  <h2>Подробное описание карточки "{{taskList.title}}"</h2>
+  <div>
+    <tfscourse-add-task (add)="onAddTask($event)"></tfscourse-add-task>
+  </div>
+  <div>
+    <div *ngFor="let task of tasks[taskList.id]; let index = index">
+      <tfscourse-task [task]="task"
+                      (deleted)="onDeleteTask(index)">
+      </tfscourse-task>
+    </div>
+  </div>
+</mat-dialog-content>

@@ -1,0 +1,35 @@
+.header {
+  background: #673ab7;
+  width: 100%;
+  //border-radius: 100% 0% 83% 17% / 0% 37% 63% 100% ;
+
+  &-container {
+    box-sizing: border-box;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    padding: 20px;
+  }
+
+  &-ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &-link {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 600;
+
+    &:hover {
+      color: #ffc300
+    }
+  }
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}

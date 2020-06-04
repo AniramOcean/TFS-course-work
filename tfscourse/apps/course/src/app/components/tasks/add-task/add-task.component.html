@@ -1,0 +1,11 @@
+<div class="form-add-task" [formGroup]="form" (keyup.enter)="onClick()">
+  <mat-form-field class="add-task-inner">
+    <mat-label>Добавить подробное описание</mat-label>
+    <textarea matInput formControlName="title" type="text" class="form-control"
+              placeholder="Завоевать мир!">
+    </textarea>
+    <button mat-icon-button matSuffix type="button" (click)="onClick()">
+      <mat-icon matSuffix>add</mat-icon>
+    </button>
+  </mat-form-field>
+</div>

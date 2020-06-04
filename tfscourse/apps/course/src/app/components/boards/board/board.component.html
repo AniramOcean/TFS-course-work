@@ -1,0 +1,11 @@
+<div class="board-card" [routerLink]="['/boards', board.id]">
+  <mat-card-content class="board-card-content">
+    <h3 class="board-card-title">{{board.title}}</h3>
+  </mat-card-content>
+  <mat-card-content class="board-card-action">
+    <button (click)="onDelete($event)"
+            mat-button color="warn" type="button">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-card-content>
+</div>

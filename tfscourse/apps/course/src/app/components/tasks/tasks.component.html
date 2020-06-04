@@ -1,0 +1,45 @@
+<div class="tasks-header-container">
+  <div class="tasks-header-inner">
+    <tfscourse-add-task-list (add)="onAddTaskList($event)">
+    </tfscourse-add-task-list>
+  </div>
+  <button [routerLink]="['/boards']" mat-raised-button mat-button color="primary"
+          type="button" class="tasks-btn">
+    Назад
+  </button>
+</div>
+
+<div cdkDropListGroup class="drop-list-container">
+  <div class="example-container">
+    <h2>TODO</h2>
+
+    <div cdkDropList class="example-list"
+         [cdkDropListData]="getTaskListsByStatus(0)"
+         (cdkDropListDropped)="drop($event, 0)">
+      <ng-container *ngFor="let taskList of getTaskListsByStatus(0); let index = index">
+        <div class="example-box" cdkDrag>
+          <tfscourse-task-list [taskList]="taskList"
+                               (deleted)="onDeleteTaskList(taskList.id)">
+          </tfscourse-task-list>
+        </div>
+      </ng-container>
+    </div>
+
+  </div>
+
+  <div class="example-container">
+    <h2>DONE</h2>
+
+    <div cdkDropList class="example-list"
+         [cdkDropListData]="getTaskListsByStatus(1)"
+         (cdkDropListDropped)="drop($event, 1)">
+      <ng-container *ngFor="let taskList of getTaskListsByStatus(1); let index = index">
+        <div class="example-box" cdkDrag>
+          <tfscourse-task-list [taskList]="taskList"
+                               (deleted)="onDeleteTaskList(taskList.id)">
+          </tfscourse-task-list>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</div>

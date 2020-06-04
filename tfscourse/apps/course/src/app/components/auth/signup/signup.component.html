@@ -1,0 +1,106 @@
+<h2>Регистрация</h2>
+<form [routerLink]="['/register']"
+      class="container"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()">
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>FirstName</mat-label>
+    <input matInput formControlName="firstname" placeholder="John"
+           type="email" class="form-control"
+    value="{{ firstnameControl.value | titlecase }}">
+    <mat-error *ngIf="firstnameControl.invalid">
+      <mat-error *ngIf="firstnameControl.errors.required">
+        FirstName is <strong>required</strong>
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>LastName</mat-label>
+    <input matInput formControlName="lastname" placeholder="Doe"
+           type="email" class="form-control"
+    value="{{ lastnameControl.value | titlecase }}">
+    <mat-error *ngIf="lastnameControl.invalid">
+      <mat-error *ngIf="lastnameControl.errors.required">
+        LastName is <strong>required</strong>
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>UserName</mat-label>
+    <input matInput formControlName="username" placeholder="Johny111"
+           type="email" class="form-control"
+    value="{{ usernameControl.value }}">
+    <mat-error *ngIf="usernameControl.invalid">
+      <mat-error *ngIf="usernameControl.errors.required">
+        UserName is <strong>required</strong>
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput formControlName="email"
+           placeholder="email@example.com"
+           type="email"
+           class="form-control">
+    <mat-error *ngIf="emailControl.invalid">
+      <mat-error *ngIf="emailControl.errors.required">
+        Email is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="emailControl.errors.email && !emailControl.errors.required">
+        Введите валидный email
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form" appearance="fill" >
+    <mat-label>Пароль</mat-label>
+    <input matInput formControlName="password"
+           class="form-control"
+           type="password"
+           [type]="hidePass ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hidePass = !hidePass"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hidePass">
+      <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+
+    <mat-error *ngIf="passwordControl.invalid">
+      <mat-error *ngIf="passwordControl.errors.required">
+        Password is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="passwordControl.errors.minlength && !passwordControl.errors.required">
+        Пароль должен быть не менее {{ passwordControl.errors.minlength.requiredLength }} символов.
+        Сейчас {{ passwordControl.errors.minlength.actualLength }} символов
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form" appearance="outline" >
+    <mat-label>Подтвердите пароль</mat-label>
+    <input matInput formControlName="confirmPassword"
+           class="form-control"
+           type="password"
+           [type]="hideConfPass ? 'password' : 'text'">
+    <button mat-icon-button matSuffix
+            (click)="hideConfPass = !hideConfPass"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hideConfPass">
+      <mat-icon>{{ hideConfPass ? 'visibility_off' : 'visibility' }}</mat-icon>
+    </button>
+
+    <mat-error *ngIf="confirmPasswordControl.invalid">
+      <mat-error *ngIf="confirmPasswordControl.errors.required">
+        Password is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="confirmPasswordControl.errors.mismatch && !confirmPasswordControl.errors.required">
+        Пароли не совпадают
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button class="btn-reg" type="submit">Зарегистрироваться</button>
+</form>

@@ -1,0 +1,42 @@
+<h2>Вход</h2>
+<form [routerLink]="['/login']"
+      class="container"
+      [formGroup]="form"
+      (ngSubmit)="onSubmit()">
+
+  <mat-form-field class="form" appearance="fill">
+    <mat-label>Имя пользователя</mat-label>
+    <input matInput formControlName="login"
+           placeholder="user"
+           class="form-control">
+    <mat-error *ngIf="loginControl.invalid">
+      <mat-error *ngIf="loginControl.errors.required">
+        Введите <strong>логин</strong>
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form" appearance="fill" >
+    <mat-label>Пароль</mat-label>
+    <input matInput formControlName="password"
+           class="form-control"
+           type="password"
+           [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" type="button"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+
+    <mat-error *ngIf="passwordControl.invalid">
+      <mat-error *ngIf="passwordControl.errors.required">
+        Введите <strong>пароль</strong>
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+  <div *ngIf="hasError" class="error">Ошибка авторизации</div>
+
+<!--  <pre>{{form.get('password').errors.minlength | json}}</pre>-->
+  <button mat-raised-button class="btn-login" type="submit">Войти</button>
+
+</form>

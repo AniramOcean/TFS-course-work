@@ -1,0 +1,18 @@
+<div class="add-task-list-container" [formGroup]="form" (keyup.enter)="onClick()">
+  <mat-card class="add-task-list-card">
+      <mat-form-field>
+        <mat-label>Новый список</mat-label>
+        <input matInput formControlName="title" class="form-control" type="text">
+        <button mat-icon-button matSuffix type="button" (click)="onClick()">
+          <mat-icon matSuffix>add</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Выбор даты</mat-label>
+        <input matInput formControlName="date" class="form-control" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+  </mat-card>
+</div>

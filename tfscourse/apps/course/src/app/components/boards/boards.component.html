@@ -1,0 +1,14 @@
+<div class="board-container">
+  <div class="board-item">
+    <tfscourse-add-board (add)="onAddBoard($event)"></tfscourse-add-board>
+  </div>
+<!--  <router-outlet></router-outlet>-->
+  <div class="board-item">
+  <mat-card class="board-inner-card" *ngFor="let board of boards; let index = index">
+      <tfscourse-board
+        [board]="board"
+        (deleted)="onDeleteBoard(index)">
+      </tfscourse-board>
+  </mat-card>
+  </div>
+</div>

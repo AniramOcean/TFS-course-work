@@ -1,0 +1,16 @@
+.task-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.task-content {
+  width: 90%;
+}
+
+.task-actions {
+  width: 10%;
+}
+
+
+

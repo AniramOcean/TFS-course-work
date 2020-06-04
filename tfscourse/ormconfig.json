@@ -1,0 +1,21 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "password",
+  "database": "tfs-course-project",
+  "entities": [
+    "dist/apps/api/**/*.entity.js"
+  ],
+  "migrations": [
+    "dist/apps/api/**/migrations/*.js"
+  ],
+  "migrationsTableName": "custom_migration_table",
+  "cli": {
+    "entitiesDir": "apps/api/src/app/modules/entities",
+    "migrationsDir": "apps/api/src/app/migrations"
+  },
+  "synchronize": true,
+  "logging": false
+}

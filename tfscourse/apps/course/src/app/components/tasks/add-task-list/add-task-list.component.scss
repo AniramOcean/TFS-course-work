@@ -1,0 +1,11 @@
+.add-task-list-container {
+
+  .add-task-list-card {
+    width: 470px;
+    height: 55px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+}

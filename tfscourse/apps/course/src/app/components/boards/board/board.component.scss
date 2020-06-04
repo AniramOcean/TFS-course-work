@@ -1,0 +1,39 @@
+.board-card {
+  outline: none;
+  //width: 100%;
+  //cursor: pointer;
+  //background: rgba(255, 181, 48, 0.84);
+  //margin: 10px 6px;
+  //transition: all .3s;
+  width: 180px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+  //&:hover {
+  //  width: 228px;
+  //  margin: 10px 2px;
+  //  background: #7500B9;
+  //
+  //  button,
+  //  .board-card-title {
+  //    color: rgba(255, 181, 48, 0.84);
+  //  }
+  //}
+
+
+  .board-card-content {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    align-content: center;
+    align-items: center;
+  }
+  .board-card-action {
+    text-align: right;
+    margin: auto;
+    width: 20%;
+  }
+}

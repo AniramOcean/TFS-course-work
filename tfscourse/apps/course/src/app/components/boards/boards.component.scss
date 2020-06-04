@@ -1,0 +1,49 @@
+.board-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+
+  .board-item {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .board-inner-card {
+    cursor: pointer;
+    background: rgba(255, 181, 48, 0.67);
+    width: 220px;
+    box-sizing: border-box;
+    margin: 10px 6px;
+    text-align: center;
+    transition: all .3s;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    &:hover {
+      width: 228px;
+      margin: 10px 2px;
+      background: #7500B9;
+      color: #fff
+    }
+
+    //&:nth-child(5n+1),
+    //&:nth-child(1){
+    //  &:hover {
+    //    border-radius: 35% 65% 35% 65% / 100% 0% 100% 0% ;
+    //  }
+    //}
+    //&:nth-child(5n),
+    //&:nth-child(5) {
+    //  &:hover {
+    //    border-radius: 65% 35% 65% 35% / 0% 100% 0% 100% ;
+    //  }
+    //}
+    //&:nth-child(5n-2) {
+    //  &:hover {
+    //    border-radius: 50%;
+    //  }
+    //}
+  }
+}
