@@ -1,2 +1,3 @@
-# tfs-course-project
+# TFS-course-project Angular
 
+backend - NestJS
